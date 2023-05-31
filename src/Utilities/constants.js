@@ -1,1 +1,1 @@
-export const BASE_URL = "https://fakestoreapi.com/products/categories";
+export const BASE_URL = "https://fakestoreapi.com/products";

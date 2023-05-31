@@ -50,7 +50,7 @@ const ShopList = () => {
                                 default:
                                     throw new Error()
                             }
-                            return(<ShopItem key={el} name={shopName} />)
+                            return (<ShopItem key={el} name={shopName} url={el} />)
                             
                         })
               : null}

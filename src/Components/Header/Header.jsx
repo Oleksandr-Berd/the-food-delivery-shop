@@ -1,9 +1,13 @@
+import * as SC from "./HeaderStyled";
+
+import Logo from "../Logo/Logo";
 import NavBar from "../NavBar/NavBar";
 
 const Header = () => {
-    return (<header>
+    return (<SC.Header>
+        <Logo/>
         <NavBar/>
-    </header> );
+    </SC.Header> );
 }
  
 export default Header;          

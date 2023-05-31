@@ -1,9 +1,9 @@
 import { NavLink } from "react-router-dom";
 
-const ShopItem = ({ name}) => {
+const ShopItem = ({ name, url}) => {
   return (
-      <li>
-          <NavLink>{name}</NavLink>
+    <li>
+      <NavLink to={url}>{name}</NavLink>
     </li>
   );
 };
