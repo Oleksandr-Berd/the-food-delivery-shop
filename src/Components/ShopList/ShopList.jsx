@@ -32,7 +32,7 @@ const ShopList = () => {
           <h2>Shops: </h2>
           <ul>
             {!!shops && shops.length > 0
-                        ? shops.map((el) => 
+                        ? shops.map((el, idx) => 
                             {
                             switch (el) {
                               case "men's clothing":
@@ -50,7 +50,7 @@ const ShopList = () => {
                                 default:
                                     throw new Error()
                             }
-                            return (<ShopItem key={el} name={shopName} url={el} />)
+                          return (<ShopItem key={el} name={shopName} url={el} index={idx} />)
                             
                         })
               : null}

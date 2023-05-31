@@ -6,6 +6,7 @@ import ProductsList from "./Components/Products/ProductsList";
 import { GlobalStyle } from "./Utilities/GlobalStyle";
 
 function App() {
+
   return (
     <>
       <GlobalStyle />
