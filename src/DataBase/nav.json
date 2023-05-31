@@ -1,0 +1,15 @@
+[
+  {
+    "id": "1",
+    "destination": "shop",
+    "name": "Shop"
+  },
+   {
+     "id": "2",
+     "destination": "shoppingCart",
+     "name": "Shop Cart"
+   }
+]
+
+
+
