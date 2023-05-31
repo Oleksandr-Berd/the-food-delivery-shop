@@ -16,6 +16,7 @@ function App() {
             <Route path="shop/" element={<ShopPage />}>
               <Route path=":name" element={<ProductsList />} />
             </Route>
+            
           </Route>
         </Routes>
       </div>

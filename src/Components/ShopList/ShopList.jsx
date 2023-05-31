@@ -20,7 +20,6 @@ const ShopList = () => {
         getShops();
     }, [])
     
-    let shopName
     
     
 
@@ -32,27 +31,17 @@ const ShopList = () => {
           <h2>Shops: </h2>
           <ul>
             {!!shops && shops.length > 0
-                        ? shops.map((el, idx) => 
-                            {
-                            switch (el) {
-                              case "men's clothing":
-                                    shopName = "MachoStyle Ltd.";
-                                    break
-                              case "women's clothing":
-                                    shopName = "Cinderella Ltd.";
-                                    break
-                              case "electronics":
-                                    shopName = "NanoTetris Ltd.";
-                                    break
-                              case "jewelery":
-                                    shopName = "SuccessfulSuccess Ltd.";
-                                    break
-                                default:
-                                    throw new Error()
-                            }
-                          return (<ShopItem key={el} name={shopName} url={el} index={idx} />)
-                            
-                        })
+              ? shops.map(({ strCategory, idCategory }, idx) => {
+                  return (
+                    <ShopItem
+                      key={idCategory}
+                      name={strCategory}
+                      url={strCategory}
+                      index={idx}
+                      id={idCategory}
+                    />
+                  );
+                })
               : null}
           </ul>
         </div>

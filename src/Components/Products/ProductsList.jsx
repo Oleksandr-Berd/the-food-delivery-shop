@@ -17,15 +17,21 @@ const ProductsList = () => {
  }, [name]);
     
 
-    return (<SC.ProductsList>
+    return (
+      <SC.ProductsList>
         {error && <h1>{error.message}</h1>}
         {!!products && products.length > 0
-                        ? products.map(({id, title, price, description, image}) => 
-                            <ProductsItem key={id} name={title} description={description} image={image} price={price }/>)
-                            
-                       
-              : null}
-    </SC.ProductsList> );
+          ? products.map(({ idMeal, strMealThumb, strMeal }) => (
+              <ProductsItem
+                key={idMeal}
+                name={strMeal}
+                image={strMealThumb}
+                id={idMeal}
+              />
+            ))
+          : null}
+      </SC.ProductsList>
+    );
 }
  
 export default ProductsList;

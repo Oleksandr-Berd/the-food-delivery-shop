@@ -4,7 +4,7 @@ import * as SC from "./LogoStyled"
 const Logo = () => {
     return (
       <SC.LogoContainer>
-        <p>The Food</p>
+        <p>Products</p>
         <SC.Logo src={deliveryLogo} alt="logo" />
         <p>Delivery</p>
       </SC.LogoContainer>
