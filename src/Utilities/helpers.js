@@ -25,7 +25,8 @@ export const fetchProducts = async (shop, limit=6) => {
     
 export const makeOrder = async (data) => {
   try {
-    return data;
+    const {name, email, phone, address} = data
+    return {name, email, phone, address};
   } catch (error) {
     return error
   }

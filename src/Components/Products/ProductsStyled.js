@@ -36,7 +36,7 @@ export const ProductsTitle = styled.h2`
   display: inline-block;
   margin-bottom: ${(props) => props.theme.spacing[3] + "px"};
 
-  font-size: ${(props) => props.theme.fonts.fontSizeM};
+  font-size: ${(props) => props.theme.size.M};
 `;
 
 export const ProductsDescription = styled.article`
