@@ -4,6 +4,7 @@ import SharedLayout from "./Components/SharedLayout/SharedLayout";
 import ShopPage from "./Pages/ShopPage/ShopPage";
 import ProductsList from "./Components/Products/ProductsList";
 import { GlobalStyle } from "./Utilities/GlobalStyle";
+import ShopCartPage from "./Pages/ShopCartPage/ShopCartPage";
 
 function App() {
 
@@ -16,7 +17,7 @@ function App() {
             <Route path="shop/" element={<ShopPage />}>
               <Route path=":name" element={<ProductsList />} />
             </Route>
-            
+            <Route path="shoppingCart" element={<ShopCartPage/> } />
           </Route>
         </Routes>
       </div>
