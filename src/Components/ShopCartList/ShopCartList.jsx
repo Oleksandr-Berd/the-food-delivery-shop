@@ -3,13 +3,11 @@ import productsCartContext from "../../context/productsCartContext";
 import ShopCartItem from "../ShopCartItem/ShopCartItem";
 
 const ShopCartList = () => {
-const { chosenProducts, productsCart, clear } = useContext(productsCartContext);
+const { chosenProducts, productsCart } = useContext(productsCartContext);
     const formedProducts = chosenProducts
       ? chosenProducts.filter(({ idMeal }) => productsCart.includes(idMeal))
         : null;
-    // if (productsCart.length > 0 && formedProducts) {
-    //     clear()
-    // }
+    
       return (
         <div>
           <ul>

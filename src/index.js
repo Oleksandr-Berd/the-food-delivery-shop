@@ -6,7 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { ThemeProvider } from "styled-components";
-
+ import "react-toastify/dist/ReactToastify.css";
 import { BrowserRouter } from "react-router-dom";
 import { theme } from './Utilities/theme';
 import ProductsCartProvider from './context/porductsCartProvider';

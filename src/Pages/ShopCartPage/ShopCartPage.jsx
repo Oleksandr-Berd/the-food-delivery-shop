@@ -1,9 +1,13 @@
+import * as SC from "./ShopCartPageStyle"
+
 import ShopCartList from "../../Components/ShopCartList/ShopCartList";
+import ShopCartOrderForm from "../../Components/ShopCartOrderForm/ShopCartOrderForm";
 
 const ShopCart = () => {
-    return (<div>
+    return (<SC.ShopCartPage>
+        <ShopCartOrderForm/>
         <ShopCartList/>
-    </div> );
+    </SC.ShopCartPage> );
 }
  
 export default ShopCart;

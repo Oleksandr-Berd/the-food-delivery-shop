@@ -23,3 +23,10 @@ export const fetchProducts = async (shop, limit=6) => {
   }
 };
     
+export const makeOrder = async (data) => {
+  try {
+    return data;
+  } catch (error) {
+    return error
+  }
+}
