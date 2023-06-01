@@ -23,6 +23,7 @@ span, p, a{
 
 ul{
   padding: ${(props) => props.theme.spacing[0]};
+  margin: ${(props) => props.theme.spacing[0]};;
   list-style: none;
 }
 `;

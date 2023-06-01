@@ -10,8 +10,10 @@ export const PageContainer = styled.div`
 export const Form = styled.form`
   padding-top: ${(props) => props.theme.spacing[5] + "px"};
   padding-bottom: ${(props) => props.theme.spacing[5] + "px"};
-  padding-right: ${(props) => props.theme.spacing[7] + "px"};
-  padding-left: ${(props) => props.theme.spacing[7] + "px"};
+  padding-right: ${(props) => props.theme.spacing[2] + "px"};
+  padding-left: ${(props) => props.theme.spacing[2] + "px"};
+  margin-right: auto;
+  margin-left: auto;
 
   border: 2px solid #e0e0e0;
   border-radius: 8px;
@@ -59,14 +61,44 @@ export const Input = styled.input`
   padding-bottom: ${(props) => props.theme.spacing[2] + "px"};
   padding-right: ${(props) => props.theme.spacing[5] + "px"};
 
+  background-color: #fdf5e6;
   font-size: ${(props) => props.theme.size.S};
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 0, 0, 0.3),
+    0 0 30px rgba(0, 0, 0, 0.1);
+  border: none;
+  outline: none;
+  border-radius: ${(props) => props.theme.radius[4] + "px"};
+  transition: box-shadow 300ms ease;
+
+  &:hover,
+  &:focus {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5),
+      0 0 30px rgba(255, 255, 255, 0.3), 0 0 45px rgba(255, 255, 255, 0.1);
+  }
 `;
 
 export const Label = styled.label`
-  margin-bottom: ${(props) => props.theme.spacing[3] + "px"};
+  margin-bottom: ${(props) => props.theme.spacing[1] + "px"};
 
   font-size: ${props => props.theme.size.M};
   font-style: italic;
   font-weight: ${props => props.theme.weight.bold};
+  font-family: ${props => props.theme.fontFamily.text};
+`;
+
+export const TotalContainer = styled.div`
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: flex-end;
+
+margin-right: ${props => props.theme.spacing[10]+"px"};
+`
+
+export const TotalPrice = styled.p`
+  margin-right: ${(props) => props.theme.spacing[10] + "px"};
+
+  font-weight: ${props => props.theme.weight.bold};
+  font-size: ${[props => props.theme.size.M]};
   font-family: ${props => props.theme.fontFamily.text};
 `;

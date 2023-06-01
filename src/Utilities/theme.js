@@ -30,6 +30,7 @@ export const theme = {
   fontFamily: {
     title: "Caveat",
     text: "Montserrat",
-  }
+  },
   
+  radius: [4, 8, 12, 16, 20, 50],
 };

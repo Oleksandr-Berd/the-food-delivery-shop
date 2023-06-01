@@ -1,34 +1,45 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import * as SC from "./ShopcartListStyle";
 import productsCartContext from "../../context/productsCartContext";
 import ShopCartItem from "../ShopCartItem/ShopCartItem";
 
 const ShopCartList = () => {
-const { chosenProducts, productsCart } = useContext(productsCartContext);
+const [finalOrder, setFinalOrder] = useState({})
+
+const { chosenProducts, productsCart } =
+  useContext(productsCartContext);
     const formedProducts = chosenProducts
       ? chosenProducts.filter(({ idMeal }) => productsCart.includes(idMeal))
         : null;
     
-  const listHeight = window.innerHeight - 150;
-  
+ const handleTotalPrice = (name, totalSum) => {
+   setFinalOrder((prevTotalPrice) => ({
+     ...prevTotalPrice,
+     [name]: totalSum,
+   }));
+ };
+
+console.log(finalOrder);
       return (
-        <SC.CustomList
-          width={600}
-          height={listHeight}
-          rowCount={formedProducts.length}
-          rowHeight={200}
-          rowRenderer={({ index, key, style }) => (
-            <div key={key} style={style}>
+        <SC.CustomList>
+          {formedProducts.length > 0 ? (
+            formedProducts.map(({ idMeal, strMealThumb, strMeal, price }) => (
               <ShopCartItem
-                id={formedProducts[index].idMeal}
-                image={formedProducts[index].strMealThumb}
-                price={formedProducts[index].price}
-                name={formedProducts[index].strMeal}
+                key={idMeal}
+                id={idMeal}
+                image={strMealThumb}
+                price={price}
+                name={strMeal}
+                handleTotalPrice={handleTotalPrice}
               />
-            </div>
+            ))
+          ) : (
+            <h3>Your cart is empty now</h3>
           )}
-        />
+        </SC.CustomList>
       );
 }
  
 export default ShopCartList;
+
+  
