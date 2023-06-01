@@ -12,7 +12,7 @@ const ProductsList = () => {
   const [products, setProducts] = useState([]);
   const [productsList, setProductsList] = useState([])
   const [error, setError] = useState(null);
-  const { productsCart, add, formChosenProducts } =
+  const { productsCart, add, formChosenProducts, clear } =
     useContext(productsCartContext);
   
   const generateRandomPrice = () => {
@@ -34,6 +34,7 @@ const ProductsList = () => {
   }, [name]);
 
   useEffect(() => {
+    clear()
    const productsWithPrice =
      products && products.length > 0
        ? products.map((el) => (el = { ...el, price: generateRandomPrice() }))
@@ -41,7 +42,7 @@ const ProductsList = () => {
     
     setProductsList(productsWithPrice);
     formChosenProducts(productsWithPrice);
-}, [formChosenProducts, products])
+}, [clear, formChosenProducts, products])
 
   const formedProducts = productsList
     ? productsList.filter(({ idMeal }) => productsCart.includes(idMeal))

@@ -8,6 +8,9 @@ export default class ProductsCartProvider extends Component {
     add: (product) => {
       this.setState((prev) =>( {productsCart: [...prev.productsCart, product]}));
     },
+     clear: () => {
+      this.setState({productsCart: []});
+    },
     formChosenProducts:(products => this.setState({chosenProducts:products}))
   };
   render() {
