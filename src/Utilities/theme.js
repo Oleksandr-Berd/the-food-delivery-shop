@@ -14,21 +14,22 @@ export const theme = {
     "100%",
   ],
 
-  fonts: {
-    fontWeightBold: "800",
-    fontWeightNormal: "500",
-
-    fontStyleItalic: "italic",
-
-    fontFamilyTitle: "Caveat",
-    fontFamilyText: "Montserrat",
-
-    fontSizeL: "72px",
-    fontSizeXM: "36px",
-    fontSizeM: "24px",
-    fontSizeS: "20px",
-    fontSizeXS: "16px",
-
-    lineHeightM: 1.4,
+  size: {
+    L: "72px",
+    XM: "36px",
+    M: "24px",
+    S: "20px",
+    XS: "16px",
   },
+
+  weight: {
+    bold: "800",
+    normal: "500",
+  },
+
+  fontFamily: {
+    title: "Caveat",
+    text: "Montserrat",
+  }
+  
 };
