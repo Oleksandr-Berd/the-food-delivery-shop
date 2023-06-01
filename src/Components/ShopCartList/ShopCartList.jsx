@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import * as SC from "./ShopcartListStyle";
 import productsCartContext from "../../context/productsCartContext";
 import ShopCartItem from "../ShopCartItem/ShopCartItem";
 
@@ -8,26 +9,25 @@ const { chosenProducts, productsCart } = useContext(productsCartContext);
       ? chosenProducts.filter(({ idMeal }) => productsCart.includes(idMeal))
         : null;
     
+  const listHeight = window.innerHeight - 150;
+  
       return (
-        <div>
-          <ul>
-            {!!formedProducts && formedProducts.length > 0 ? (
-              formedProducts.map(({ strMeal, strMealThumb, idMeal, price }) => (
-                <ShopCartItem
-                  key={idMeal}
-                  id={idMeal}
-                  image={strMealThumb}
-                  price={price}
-                  name={strMeal}
-                />
-              ))
-            ) : (
-              <>
-                <h1>Sorry, Your Cart is empty now!</h1>
-              </>
-            )}
-          </ul>
-        </div>
+        <SC.CustomList
+          width={600}
+          height={listHeight}
+          rowCount={formedProducts.length}
+          rowHeight={200}
+          rowRenderer={({ index, key, style }) => (
+            <div key={key} style={style}>
+              <ShopCartItem
+                id={formedProducts[index].idMeal}
+                image={formedProducts[index].strMealThumb}
+                price={formedProducts[index].price}
+                name={formedProducts[index].strMeal}
+              />
+            </div>
+          )}
+        />
       );
 }
  

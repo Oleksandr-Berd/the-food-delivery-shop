@@ -40,7 +40,7 @@ const ShopCartOrderForm = () => {
         <SC.FormContainer>
           <SC.GeneralInputContainer>
             <SC.InputContainer>
-              <label htmlFor="name">Your Name</label>
+              <SC.Label htmlFor="name">Your Name</SC.Label>
               <SC.Input
                 id="name"
                 name="name"
@@ -54,8 +54,8 @@ const ShopCartOrderForm = () => {
               ) : null}
             </SC.InputContainer>
             <SC.InputContainer>
-              <label htmlFor="email">Your email</label>
-              <input
+              <SC.Label htmlFor="email">Your email</SC.Label>
+              <SC.Input
                 id="email"
                 name="email"
                 value={formik.values.email}
@@ -68,8 +68,8 @@ const ShopCartOrderForm = () => {
               ) : null}
             </SC.InputContainer>
             <SC.InputContainer>
-              <label htmlFor="phone">Your phone</label>
-              <input
+              <SC.Label htmlFor="phone">Your phone</SC.Label>
+              <SC.Input
                 id="phone"
                 name="phone"
                 value={formik.values.phone}
@@ -81,20 +81,20 @@ const ShopCartOrderForm = () => {
               {formik.errors.phone ? (
                 <div name="name">{formik.errors.phone}</div>
               ) : null}
-              <SC.InputContainer>
-                <label htmlFor="address">Your address</label>
-                <input
-                  id="address"
-                  name="address"
-                  value={formik.values.address}
-                  type="address"
-                  onChange={formik.handleChange}
-                  onBlur={formik.handleBlur}
-                />
-                {formik.errors.email ? (
-                  <div name="address">{formik.errors.address}</div>
-                ) : null}
-              </SC.InputContainer>
+            </SC.InputContainer>
+            <SC.InputContainer>
+              <SC.Label htmlFor="address">Your address</SC.Label>
+              <SC.Input
+                id="address"
+                name="address"
+                value={formik.values.address}
+                type="address"
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+              />
+              {formik.errors.email ? (
+                <div name="address">{formik.errors.address}</div>
+              ) : null}
             </SC.InputContainer>
           </SC.GeneralInputContainer>
           <ShopCartList />
