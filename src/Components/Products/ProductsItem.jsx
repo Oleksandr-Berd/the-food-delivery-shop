@@ -12,7 +12,6 @@ const ProductsItem = ({
 }) => {
   const handleProductCart = () => {
     addProduct(id);
-    formProductList(productsList);
   };
 
   return (

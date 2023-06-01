@@ -39,8 +39,9 @@ const ProductsList = () => {
        ? products.map((el) => (el = { ...el, price: generateRandomPrice() }))
        : null;
     
-   setProductsList(productsWithPrice);
-}, [products])
+    setProductsList(productsWithPrice);
+    formChosenProducts(productsWithPrice);
+}, [formChosenProducts, products])
 
   const formedProducts = productsList
     ? productsList.filter(({ idMeal }) => productsCart.includes(idMeal))
