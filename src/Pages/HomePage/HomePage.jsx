@@ -1,5 +1,4 @@
 import * as SC from "./HomePageStyled"
-import css from "./HomePage.module.css"
 import image from "../../assets/images/homepagefirst.jpeg";
 import image2 from "../../assets/images/homepagesecond.webp";
 import image3 from "../../assets/images/homepagethird.jpeg";
@@ -12,34 +11,34 @@ import image6 from "../../assets/images/homepagesix.jpeg";
 const HomePage = () => {
     return (
     
-    <div className={css.container}>
-      <div className={css.panelFirst}>
-        <div className={css.panelTall}>
-          <img src={image} alt="fishing" />
-        </div>
-        <div className={css.panelSmall}>
-          <img src={image2} alt="fishing" />
-        </div>
-      </div>
+    <SC.HomePage >
+      <SC.GridPanelFirst >
+        <SC.GridPanelTall >
+          <SC.GridImg src={image} alt="homePageImage" />
+        </SC.GridPanelTall>
+        <SC.GridPanelSmall >
+          <SC.GridImg src={image2} alt="homePageImage" />
+        </SC.GridPanelSmall>
+      </SC.GridPanelFirst>
 
-      <div className={css.panelSecond}>
-        <div className={css.panelSmall}>
-          <img src={image3} alt="fishing" />
-        </div>
-        <div className={css.panelTall}>
-          <img src={image4} alt="fishing" />
-        </div>
-      </div>
+      <SC.GridPanelSecond >
+        <SC.GridPanelSmall >
+          <SC.GridImg src={image3} alt="homePageImage" />
+        </SC.GridPanelSmall>
+        <SC.GridPanelTall >
+          <SC.GridImg src={image4} alt="homePageImage" />
+        </SC.GridPanelTall>
+      </SC.GridPanelSecond>
 
-      <div className={css.panelFirst}>
-        <div className={css.panelTall}>
-          <img src={image5} alt="fishing" />
-        </div>
-        <div className={css.panelSmall}>
-          <img src={image6} alt="fishing" />
-        </div>
-      </div>
-    </div>
+      <SC.GridPanelFirst >
+        <SC.GridPanelTall >
+          <SC.GridImg src={image5} alt="homePageImage" />
+        </SC.GridPanelTall>
+        <SC.GridPanelSmall >
+          <SC.GridImg src={image6} alt="homePageImage" />
+        </SC.GridPanelSmall>
+      </SC.GridPanelFirst>
+    </SC.HomePage>
  
     );
 }

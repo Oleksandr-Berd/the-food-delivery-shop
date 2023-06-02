@@ -2,13 +2,11 @@ import styled from "styled-components";
 
 export const HomePage = styled.div`
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   justify-items: center;
   justify-content: center;
   grid-template-rows: 1fr;
-  margin-right: auto;
-  margin-left: auto;
-  max-height: 50px;
+  margin: 0 auto;
 `;
 
 export const GridPanelFirst = styled.div`
@@ -19,9 +17,7 @@ export const GridPanelFirst = styled.div`
 
 export const GridPanelSecond = styled.div`
   display: grid;
-
   grid-template-rows: 2fr 1fr;
-  justify-items: center;
   min-height: 100%;
 `;
 

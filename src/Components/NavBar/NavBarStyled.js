@@ -13,7 +13,7 @@ export const Link = styled(NavLink)`
   font-size: ${(props) => props.theme.size.M};
   color: ${(props) => props.theme.color.text};
   font-family: ${(props) => props.theme.fontFamily.text};
-  
+
   transition: ${(props) => props.theme.transition};
 
   &:hover,
@@ -22,4 +22,5 @@ export const Link = styled(NavLink)`
 
     transition: ${(props) => props.theme.transition};
   }
+
 `;
