@@ -5,8 +5,12 @@ import { toast } from "react-toastify";
 import { makeOrder } from "../../Utilities/helpers";
 import * as SC from "./ShopCartOrderStyle";
 import ShopCartList from "../ShopCartList/ShopCartList";
+import { useContext } from "react";
+import productsCartContext from "../../context/productsCartContext";
 
 const ShopCartOrderForm = () => {
+  const { totalPrice } = useContext(productsCartContext);
+
   const validationSchema = Yup.object({
     name: Yup.string().min(2, "Too Short!").required("Name is required"),
     email: Yup.string().email("Invalid email").required("Email is required"),
@@ -14,19 +18,22 @@ const ShopCartOrderForm = () => {
     address: Yup.string().min(7, "Too Short!").required("Address is required"),
   });
 
+   const totalOrder = !totalPrice ? "You haven't ordered yet" : totalPrice;
+
   const formik = useFormik({
     initialValues: {
       name: "",
       email: "",
       phone: "",
       address: "",
+      payment: null,
     },
     validationSchema,
     onSubmit: (values, { resetForm }) => {
       makeOrder(values)
         .then((response) =>
           toast.success(
-            `Name: ${response.name}, Email: ${response.email}, Phone:${response.phone}, Address: ${response.address}`
+            `Name: ${response.name}, Email: ${response.email}, Phone:${response.phone}, Address: ${response.address}, Sum for payment: ${totalOrder}`
           )
         )
         .catch((error) => toast.error(`${error}`));
@@ -100,8 +107,10 @@ const ShopCartOrderForm = () => {
           <ShopCartList />
         </SC.FormContainer>
         <SC.TotalContainer>
-          <SC.TotalPrice>Total order: </SC.TotalPrice>
-          <button type="submit">Make Your Order!</button>
+          <SC.TotalPrice>Total order: {totalOrder}</SC.TotalPrice>
+          <button type="submit">
+            Make Your Order!
+          </button>
         </SC.TotalContainer>
       </SC.Form>
     </SC.PageContainer>

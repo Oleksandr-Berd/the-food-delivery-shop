@@ -5,7 +5,7 @@ export default class ProductsCartProvider extends Component {
   state = {
     productsCart: [],
     chosenProducts: [],
-    totalPrice: [],
+    totalPrice: null,
     add: (product) => {
       this.setState((prev) => ({
         productsCart: [...prev.productsCart, product],
@@ -18,9 +18,7 @@ export default class ProductsCartProvider extends Component {
       this.setState({ chosenProducts: products }),
     
     calculateTotalPrice: (total) => {
-      this.setState((prev) => ({
-        totalPrice: [...prev.totalPrice, total],
-      }));
+      this.setState({totalPrice:total});
     },
   };
   render() {

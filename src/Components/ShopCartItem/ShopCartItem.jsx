@@ -1,11 +1,9 @@
-import productsCartContext from "../../context/productsCartContext";
 import * as SC from "./ShopCartItemStyle"
-import { useContext, useState, useEffect } from "react";
+import {useState, useEffect } from "react";
 
 const ShopCartItem = ({ id, name, image, price, handleTotalPrice }) => {
   const [totalAmount, setTotalAmount] = useState(0);
   const [totalPrice, setTotalPrice] = useState({});
-  const { calculateTotalPrice } = useContext(productsCartContext);
 
   const handleChange = (event) => {
     const inputValue = event.target.value;
@@ -23,6 +21,7 @@ const ShopCartItem = ({ id, name, image, price, handleTotalPrice }) => {
   useEffect(() => {
    
     handleTotalPrice(name, totalPrice);
+  
   // eslint-disable-next-line react-hooks/exhaustive-deps
   },[name, totalPrice])
 
