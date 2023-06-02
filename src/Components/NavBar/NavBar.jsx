@@ -1,10 +1,10 @@
-import { NavLink } from "react-router-dom";
 import navLinks from "../../DataBase/nav.json";
+import * as SC from "./NavBarStyled"
 
 const NavBar = () => {
     return <nav>
       
-        {navLinks.map(({id, destination, name})=>(<NavLink to={destination} key={id}>{name}</NavLink>)) }
+        {navLinks.map(({id, destination, name})=>(<SC.Link to={destination} key={id}>{name}</SC.Link>)) }
   </nav>;
 };
 

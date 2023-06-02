@@ -14,6 +14,10 @@ export const theme = {
     "100%",
   ],
 
+  transition: {
+    color: "color 300ms ease",
+  },
+
   size: {
     L: "72px",
     XM: "36px",
@@ -31,6 +35,12 @@ export const theme = {
     title: "Caveat",
     text: "Montserrat",
   },
-  
+
   radius: [4, 8, 12, 16, 20, 50],
+
+  color: {
+    background: "#98FF98",
+    text: "#3D1E02",
+    accent: "#E63900",
+  },
 };

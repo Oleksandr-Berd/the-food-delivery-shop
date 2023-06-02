@@ -6,7 +6,8 @@ import NavBar from "../NavBar/NavBar";
 const Header = () => {
     return (<SC.Header>
         <Logo/>
-        <NavBar/>
+        <NavBar />
+        <SC.Title>Welcome to Our Food Delivery Service!</SC.Title>
     </SC.Header> );
 }
  
