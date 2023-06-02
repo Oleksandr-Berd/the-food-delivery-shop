@@ -1,4 +1,6 @@
 
+import { useState } from "react";
+import { FaCheckCircle } from "react-icons/fa";
 import * as SC from "./ProductsStyled";
 
 const ProductsItem = ({
@@ -6,20 +8,37 @@ const ProductsItem = ({
   image,
   id,
   addProduct,
+  removeProduct,
   price,
-  formProductList,
-  productsList,
 }) => {
-  const handleProductCart = () => {
+
+const [isAdded, setIsAdded] = useState(false)
+
+  const handleAddProductCart = () => {
     addProduct(id);
+    setIsAdded(!isAdded)
   };
+
+  const handleRemoveProductCart = () => {
+     
+      removeProduct(id);
+      setIsAdded(!isAdded);
+    };
 
   return (
     <SC.ProductsItem key={id}>
       <SC.ProductsImage src={image} alt={name} />
       <SC.ProductsTitle>{name}</SC.ProductsTitle>
-      <p>Price: {price} $</p>
-      <button onClick={handleProductCart}>Add to the Cart</button>
+      <SC.Text>Price: {price} $</SC.Text>
+      {!isAdded ? (
+        <SC.Button onClick={handleAddProductCart} status="untouched">
+          Add to the Cart
+        </SC.Button>
+      ) : (
+        <SC.Button status="touched">
+          <FaCheckCircle size={30} fill="green" />
+        </SC.Button>
+      )}
     </SC.ProductsItem>
   );
 };

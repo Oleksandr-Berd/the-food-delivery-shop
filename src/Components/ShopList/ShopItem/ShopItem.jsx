@@ -1,12 +1,13 @@
-import { NavLink } from "react-router-dom";
+
+import * as SC from "../ShopListStyled"
 
 const ShopItem = ({ name, url, index, id}) => {
   return (
-    <li key={id}>
-      <NavLink to={url}>
+    <SC.Item key={id}>
+      <SC.Link to={url}>
         {name}
-      </NavLink>
-    </li>
+      </SC.Link>
+    </SC.Item>
   );
 };
 

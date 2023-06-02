@@ -11,6 +11,11 @@ export default class ProductsCartProvider extends Component {
         productsCart: [...prev.productsCart, product],
       }));
     },
+    remove:(product) => {
+      this.setState((prev) => ({
+        productsCart: prev.productsCart.filter(el => el.id !== product.id),
+      }));
+    },
     clear: () => {
       this.setState({ productsCart: [] });
     },

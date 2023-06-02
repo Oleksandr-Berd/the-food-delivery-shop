@@ -15,6 +15,8 @@ export const GlobalStyle = createGlobalStyle`
 
 h1, h2, h3, h4 , h5 ,h6{
   margin: ${(props) => props.theme.spacing[0]};
+  color: ${(props) => props.theme.color.text};
+  font-family: ${(props) => props.theme.fontFamily.title};
 }
 
 span, p, a{

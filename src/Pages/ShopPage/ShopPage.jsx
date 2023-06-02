@@ -9,6 +9,7 @@ const ShopPage = () => {
       <SC.SideBar>
         <ShopList />
       </SC.SideBar>
+     <SC.Title>Choose Your Products!</SC.Title>
       <Outlet />
     </SC.ShopPageContainer>
   );

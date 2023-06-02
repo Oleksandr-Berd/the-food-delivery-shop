@@ -7,10 +7,11 @@ export const Header = styled.header`
   padding-left: ${(props) => props.theme.spacing[7] + "px"};
   padding-top: ${(props) => props.theme.spacing[3] + "px"};
   padding-bottom: ${(props) => props.theme.spacing[3] + "px"};
-  background-color: ${(props) => props.theme.color.background};
+
+  background: linear-gradient(45deg, #98ff98, #b2febf);
+  transition: background-color 0.5s ease-in-out;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-
 `;
 
 export const Title = styled.h1`

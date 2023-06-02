@@ -12,7 +12,7 @@ const ProductsList = () => {
   const [products, setProducts] = useState([]);
   const [productsList, setProductsList] = useState([])
   const [error, setError] = useState(null);
-  const { productsCart, add, formChosenProducts, clear } =
+  const { productsCart, add,formChosenProducts, clear, remove } =
     useContext(productsCartContext);
   
   const generateRandomPrice = () => {
@@ -50,8 +50,14 @@ const ProductsList = () => {
 
   const handleAddProduct = (id) => {
     add(id);
+     console.log(id);
     
   };
+
+  const handleRemoveProduct = (id) => {
+
+    remove(id);
+  }
 
   const handleFormProducts = formedProducts => {
     formChosenProducts(formedProducts);
@@ -73,6 +79,7 @@ const ProductsList = () => {
             image={strMealThumb}
             id={idMeal}
             addProduct={handleAddProduct}
+            removeProduct={handleRemoveProduct}
             formProductList={handleFormProducts}
             price={price}
           />

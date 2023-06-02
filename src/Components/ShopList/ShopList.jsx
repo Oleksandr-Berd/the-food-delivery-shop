@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 
+import * as SC from "./ShopListStyled"
 import { fetchShops } from "../../Utilities/helpers";
 import ShopItem from "./ShopItem/ShopItem";
 
@@ -19,16 +20,12 @@ const ShopList = () => {
 
         getShops();
     }, [])
-    
-    
-    
-
 
     return (
       <>
         {error && <h1>error.message</h1>}
-        <div>
-          <h2>Shops: </h2>
+        <SC.Container>
+          <SC.Title>Shops: </SC.Title>
           <ul>
             {!!shops && shops.length > 0
               ? shops.map(({ strCategory, idCategory }, idx) => {
@@ -44,7 +41,7 @@ const ShopList = () => {
                 })
               : null}
           </ul>
-        </div>
+        </SC.Container>
       </>
     );
 }
