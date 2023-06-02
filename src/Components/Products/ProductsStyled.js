@@ -5,6 +5,8 @@ export const ProductsList = styled.ul`
   grid-template-columns: repeat(2, 1fr);
   gap: ${(props) => props.theme.spacing[5] + "px"};
   justify-items: end;
+max-height: 900px;
+overflow: auto;
 
   padding-right: ${(props) => props.theme.spacing[8] + "px"};
   padding-top: ${(props) => props.theme.spacing[8] + "px"};
