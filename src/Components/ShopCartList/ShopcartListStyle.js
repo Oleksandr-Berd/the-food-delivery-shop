@@ -7,7 +7,9 @@ export const CustomList = styled.ul`
   padding-left: ${(props) => props.theme.spacing[7] + "px"};
   margin-left: ${(props) => props.theme.spacing[5] + "px"};
   width: ${(props) => props.theme.percentage[6]};
-/* height: 100%; */
+  /* height: 100%; */
+
+  background-color: ${(props) => props.theme.color.backgroundCard};
 
   border: 2px solid #e0e0e0;
   border-radius: 8px;

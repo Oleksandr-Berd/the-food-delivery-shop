@@ -15,6 +15,7 @@ export const Form = styled.form`
   margin-right: auto;
   margin-left: auto;
 
+
   border: 2px solid #e0e0e0;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -39,6 +40,8 @@ export const GeneralInputContainer = styled.div`
   padding-left: ${(props) => props.theme.spacing[10] + "px"};
 
   width: ${(props) => props.theme.percentage[6]};
+
+  background-color: ${(props) => props.theme.color.backgroundCard};
 
   border: 2px solid #e0e0e0;
   border-radius: 8px;
@@ -101,4 +104,21 @@ export const TotalPrice = styled.p`
   font-weight: ${props => props.theme.weight.bold};
   font-size: ${[props => props.theme.size.M]};
   font-family: ${props => props.theme.fontFamily.text};
+`;
+
+export const Button = styled.button`
+  background-color: #ffdb58;
+  color: ${(props) => props.theme.color.text};
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+
+  &:hover {
+    background-color: #ffc000;
+  }
 `;

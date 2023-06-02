@@ -108,9 +108,9 @@ const ShopCartOrderForm = () => {
         </SC.FormContainer>
         <SC.TotalContainer>
           <SC.TotalPrice>Total order: {totalOrder}</SC.TotalPrice>
-          <button type="submit">
+          <SC.Button type="submit">
             Make Your Order!
-          </button>
+          </SC.Button>
         </SC.TotalContainer>
       </SC.Form>
     </SC.PageContainer>

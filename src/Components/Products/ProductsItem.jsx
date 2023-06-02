@@ -8,7 +8,6 @@ const ProductsItem = ({
   image,
   id,
   addProduct,
-  removeProduct,
   price,
 }) => {
 
@@ -18,12 +17,6 @@ const [isAdded, setIsAdded] = useState(false)
     addProduct(id);
     setIsAdded(!isAdded)
   };
-
-  const handleRemoveProductCart = () => {
-     
-      removeProduct(id);
-      setIsAdded(!isAdded);
-    };
 
   return (
     <SC.ProductsItem key={id}>

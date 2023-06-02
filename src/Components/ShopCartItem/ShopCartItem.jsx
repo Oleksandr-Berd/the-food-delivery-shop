@@ -30,13 +30,16 @@ const ShopCartItem = ({ id, name, image, price, handleTotalPrice }) => {
       <SC.Image src={image} alt={name} />
       <SC.TextContainer>
         <h3>{name}</h3>
-        <p>Price: {price}</p>
-        <input
-          type="number"
-          value={totalAmount}
-          onChange={handleChange}
-          min="0"
-        />
+        <SC.Text>Price: {price}</SC.Text>
+       
+          <SC.Input
+            type="number"
+            value={totalAmount}
+            onChange={handleChange}
+
+            min="0"
+          />
+          
       </SC.TextContainer>
     </SC.Item>
   );

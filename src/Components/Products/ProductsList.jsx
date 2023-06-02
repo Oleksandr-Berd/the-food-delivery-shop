@@ -6,13 +6,15 @@ import * as SC from "./ProductsStyled";
 import { fetchProducts } from "../../Utilities/helpers";
 import ProductsItem from "./ProductsItem";
 import productsCartContext from "../../context/productsCartContext";
+import { FidgetSpinner } from "react-loader-spinner";
 
 const ProductsList = () => {
   const { name } = useParams();
   const [products, setProducts] = useState([]);
+  const [isLoading, setIsLoading] = useState(false)
   const [productsList, setProductsList] = useState([])
   const [error, setError] = useState(null);
-  const { productsCart, add,formChosenProducts, clear, remove } =
+  const { productsCart, add,formChosenProducts, clear } =
     useContext(productsCartContext);
   
   const generateRandomPrice = () => {
@@ -28,9 +30,10 @@ const ProductsList = () => {
   
 
   useEffect(() => {
+    setIsLoading(true)
     fetchProducts(name)
       .then(setProducts)
-      .catch((error) => setError(error));
+      .catch((error) => setError(error)).finally(() => setIsLoading(false));
   }, [name]);
 
   useEffect(() => {
@@ -54,11 +57,6 @@ const ProductsList = () => {
     
   };
 
-  const handleRemoveProduct = (id) => {
-
-    remove(id);
-  }
-
   const handleFormProducts = formedProducts => {
     formChosenProducts(formedProducts);
   }
@@ -69,7 +67,19 @@ const ProductsList = () => {
   return (
     <SC.ProductsList>
       {error && <h1>{error.message}</h1>}
-      {!!productsList &&
+      {isLoading ? (
+        <FidgetSpinner
+          visible={true}
+          height="80"
+          width="80"
+          ariaLabel="dna-loading"
+          wrapperStyle={{}}
+          wrapperClass="dna-wrapper"
+          ballColors={["#ff0000", "#00ff00", "#0000ff"]}
+          backgroundColor="#F4442E"
+        />
+      ) : (
+        !!productsList &&
         productsList.length > 0 &&
         productsList.map(({ idMeal, strMealThumb, strMeal, price }) => (
           <ProductsItem
@@ -79,11 +89,12 @@ const ProductsList = () => {
             image={strMealThumb}
             id={idMeal}
             addProduct={handleAddProduct}
-            removeProduct={handleRemoveProduct}
             formProductList={handleFormProducts}
             price={price}
           />
-        ))}
+        ))
+      )}
+     
     </SC.ProductsList>
   );
 };

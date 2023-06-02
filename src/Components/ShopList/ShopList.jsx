@@ -3,18 +3,21 @@ import { useEffect, useState } from "react";
 import * as SC from "./ShopListStyled"
 import { fetchShops } from "../../Utilities/helpers";
 import ShopItem from "./ShopItem/ShopItem";
+import { FidgetSpinner } from "react-loader-spinner";
 
 const ShopList = () => {
     const [shops, setShops] = useState([])
-    const [error, setError] = useState(null)
+  const [error, setError] = useState(null)
+  const [isLoading, setIsLoading] = useState(false)
 
     useEffect(() => {
-        const getShops = () => {
+      const getShops = () => {
+          setIsLoading(true)
             fetchShops()
                 .then((response) => {
                     setShops(response);
                 })
-                .catch((error) => setError(error.message))
+                .catch((error) => setError(error.message)).finally(()=> setIsLoading(false))
         
         };
 
@@ -24,6 +27,18 @@ const ShopList = () => {
     return (
       <>
         {error && <h1>error.message</h1>}
+        {isLoading && (
+          <FidgetSpinner
+            visible={true}
+            height="80"
+            width="80"
+            ariaLabel="dna-loading"
+            wrapperStyle={{}}
+            wrapperClass="dna-wrapper"
+            ballColors={["#ff0000", "#00ff00", "#0000ff"]}
+            backgroundColor="#F4442E"
+          />
+        )}
         <SC.Container>
           <SC.Title>Shops: </SC.Title>
           <ul>
