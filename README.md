@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+Food Delivery Service - React Application
+This is a React-based application for a food delivery service. It provides a user-friendly interface for customers to browse through available shops, view their menus, and place orders for delivery or pickup.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Installation
+Clone the repository to your local machine using the following command:
 
-## Available Scripts
+bash
+Copy code
+git clone https://github.com/your-username/food-delivery-service.git
+Navigate to the project directory:
 
-In the project directory, you can run:
+bash
+Copy code
+cd food-delivery-service
+Install the required dependencies using npm or yarn:
 
-### `npm start`
+Copy code
+npm install
+or
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Copy code
+yarn install
+Configuration
+Create a .env file in the root directory of the project.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Configure the required environment variables in the .env file. You may need to obtain these values from your backend service or API provider. The following variables are required:
 
-### `npm test`
+makefile
+Copy code
+REACT_APP_API_URL=your-backend-api-url
+REACT_APP_GOOGLE_MAPS_API_KEY=your-google-maps-api-key
+Usage
+Start the development server using the following command:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+sql
+Copy code
+npm start
+or
 
-### `npm run build`
+sql
+Copy code
+yarn start
+Open your browser and navigate to http://localhost:3000 to access the application.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Features
+Browse Shops: Users can view a list of available sop with details such as name, cuisine type.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+View Menus: Users can explore the menu of each shop, including food items, prices.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Place Orders: Users can add items to their cart, customize their orders, and proceed to checkout.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

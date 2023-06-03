@@ -1,5 +1,7 @@
 import { useContext, useEffect, useState } from "react";
+
 import * as SC from "./ShopcartListStyle";
+
 import productsCartContext from "../../context/productsCartContext";
 import ShopCartItem from "../ShopCartItem/ShopCartItem";
 

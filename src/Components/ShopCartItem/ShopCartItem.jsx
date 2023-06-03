@@ -1,5 +1,6 @@
-import * as SC from "./ShopCartItemStyle"
-import {useState, useEffect } from "react";
+import { useState, useEffect } from "react";
+
+import * as SC from "./ShopCartItemStyle";
 
 const ShopCartItem = ({ id, name, image, price, handleTotalPrice }) => {
   const [totalAmount, setTotalAmount] = useState(0);
@@ -15,15 +16,13 @@ const ShopCartItem = ({ id, name, image, price, handleTotalPrice }) => {
       setTotalAmount(inputValue);
       setTotalPrice((inputValue * price).toFixed(2));
     }
-   
   };
 
   useEffect(() => {
-   
     handleTotalPrice(name, totalPrice);
-  
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  },[name, totalPrice])
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [name, totalPrice]);
 
   return (
     <SC.Item>
@@ -31,18 +30,16 @@ const ShopCartItem = ({ id, name, image, price, handleTotalPrice }) => {
       <SC.TextContainer>
         <h3>{name}</h3>
         <SC.Text>Price: {price}</SC.Text>
-       
-          <SC.Input
-            type="number"
-            value={totalAmount}
-            onChange={handleChange}
 
-            min="0"
-          />
-          
+        <SC.Input
+          type="number"
+          value={totalAmount}
+          onChange={handleChange}
+          min="0"
+        />
       </SC.TextContainer>
     </SC.Item>
   );
 };
- 
+
 export default ShopCartItem;

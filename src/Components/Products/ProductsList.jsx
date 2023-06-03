@@ -1,12 +1,12 @@
 import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { FidgetSpinner } from "react-loader-spinner";
 
 import * as SC from "./ProductsStyled";
 
 import { fetchProducts } from "../../Utilities/helpers";
 import ProductsItem from "./ProductsItem";
 import productsCartContext from "../../context/productsCartContext";
-import { FidgetSpinner } from "react-loader-spinner";
 
 const ProductsList = () => {
   const { name } = useParams();

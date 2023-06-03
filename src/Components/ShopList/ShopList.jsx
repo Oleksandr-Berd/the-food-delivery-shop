@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
+import { FidgetSpinner } from "react-loader-spinner";
 
 import * as SC from "./ShopListStyled"
 import { fetchShops } from "../../Utilities/helpers";
+
 import ShopItem from "./ShopItem/ShopItem";
-import { FidgetSpinner } from "react-loader-spinner";
 
 const ShopList = () => {
     const [shops, setShops] = useState([])

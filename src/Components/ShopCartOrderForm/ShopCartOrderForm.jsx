@@ -1,3 +1,4 @@
+import { useContext } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { toast } from "react-toastify";
@@ -5,7 +6,6 @@ import { toast } from "react-toastify";
 import { makeOrder } from "../../Utilities/helpers";
 import * as SC from "./ShopCartOrderStyle";
 import ShopCartList from "../ShopCartList/ShopCartList";
-import { useContext } from "react";
 import productsCartContext from "../../context/productsCartContext";
 
 const ShopCartOrderForm = () => {
@@ -18,7 +18,7 @@ const ShopCartOrderForm = () => {
     address: Yup.string().min(7, "Too Short!").required("Address is required"),
   });
 
-   const totalOrder = !totalPrice ? "You haven't ordered yet" : totalPrice;
+  const totalOrder = !totalPrice ? "You haven't ordered yet" : totalPrice;
 
   const formik = useFormik({
     initialValues: {
@@ -108,9 +108,7 @@ const ShopCartOrderForm = () => {
         </SC.FormContainer>
         <SC.TotalContainer>
           <SC.TotalPrice>Total order: {totalOrder}</SC.TotalPrice>
-          <SC.Button type="submit">
-            Make Your Order!
-          </SC.Button>
+          <SC.Button type="submit">Make Your Order!</SC.Button>
         </SC.TotalContainer>
       </SC.Form>
     </SC.PageContainer>
