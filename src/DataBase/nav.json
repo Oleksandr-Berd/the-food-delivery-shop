@@ -1,14 +1,19 @@
 [
   {
     "id": "1",
+    "destination": "/",
+    "name": "Home"
+  },
+  {
+    "id": "2",
     "destination": "shop",
     "name": "Shop"
   },
-   {
-     "id": "2",
-     "destination": "shoppingCart",
-     "name": "Shop Cart"
-   }
+  {
+    "id": "3",
+    "destination": "shoppingCart",
+    "name": "Shop Cart"
+  }
 ]
 
 

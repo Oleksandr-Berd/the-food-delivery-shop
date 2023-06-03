@@ -49,5 +49,7 @@ export const theme = {
     buttonAdd: "linear-gradient(45deg, #ffdb58, #ffc000)",
     text: "#3D1E02",
     accent: "#E63900",
+    lightText: "#E4E4D4",
+    dark: "#0F0F0F",
   },
 };

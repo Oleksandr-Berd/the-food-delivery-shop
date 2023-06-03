@@ -1,12 +1,16 @@
 import "./App.css";
+import { lazy } from "react";
 import { Route, Routes } from "react-router-dom";
-import SharedLayout from "./Components/SharedLayout/SharedLayout";
-import ShopPage from "./Pages/ShopPage/ShopPage";
-import ProductsList from "./Components/Products/ProductsList";
-import { GlobalStyle } from "./Utilities/GlobalStyle";
-import ShopCartPage from "./Pages/ShopCartPage/ShopCartPage";
 import { ToastContainer } from "react-toastify";
-import HomePage from "./Pages/HomePage/HomePage.jsx";
+
+import SharedLayout from "./Components/SharedLayout/SharedLayout";
+import { GlobalStyle } from "./Utilities/GlobalStyle";
+
+const HomePage = lazy(() => import("./Pages/HomePage/HomePage.jsx"));
+const ShopPage = lazy(() => import("./Pages/ShopPage/ShopPage"));
+const ShopCartPage = lazy(() => import("./Pages/ShopCartPage/ShopCartPage"));
+const ProductsList = lazy(() => import("./Components/Products/ProductsList"));
+
 
 function App() {
 
@@ -18,7 +22,6 @@ function App() {
         <Routes>
           <Route path="/" element={<SharedLayout />}>
             <Route index element={<HomePage />} />
-            <Route path="home" element={<HomePage />} />
             <Route path="shop/" element={<ShopPage />}>
               <Route path=":name" element={<ProductsList />} />
             </Route>

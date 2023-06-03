@@ -1,7 +1,9 @@
 import { Outlet } from "react-router-dom";
-import Header from "../Header/Header";
 import { Suspense } from "react";
 import { FidgetSpinner } from "react-loader-spinner";
+
+import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
 
 const SharedLayout = () => {
     return (
@@ -25,6 +27,7 @@ const SharedLayout = () => {
         >
           <Outlet />
         </Suspense>
+        <Footer/>
       </>
     );
 }

@@ -11,12 +11,12 @@ import { FidgetSpinner } from "react-loader-spinner";
 const ProductsList = () => {
   const { name } = useParams();
   const [products, setProducts] = useState([]);
-  const [isLoading, setIsLoading] = useState(false)
-  const [productsList, setProductsList] = useState([])
+  const [isLoading, setIsLoading] = useState(false);
+  const [productsList, setProductsList] = useState([]);
   const [error, setError] = useState(null);
-  const { productsCart, add,formChosenProducts, clear } =
+  const { productsCart, add, formChosenProducts, clear } =
     useContext(productsCartContext);
-  
+
   const generateRandomPrice = () => {
     const min = 1;
     const max = 100;
@@ -25,27 +25,25 @@ const ProductsList = () => {
 
     return randomPrice;
   };
-  
-
-  
 
   useEffect(() => {
-    setIsLoading(true)
+    setIsLoading(true);
     fetchProducts(name)
       .then(setProducts)
-      .catch((error) => setError(error)).finally(() => setIsLoading(false));
+      .catch((error) => setError(error))
+      .finally(() => setIsLoading(false));
   }, [name]);
 
   useEffect(() => {
-    clear()
-   const productsWithPrice =
-     products && products.length > 0
-       ? products.map((el) => (el = { ...el, price: generateRandomPrice() }))
-       : null;
-    
+    clear();
+    const productsWithPrice =
+      products && products.length > 0
+        ? products.map((el) => (el = { ...el, price: generateRandomPrice() }))
+        : null;
+
     setProductsList(productsWithPrice);
     formChosenProducts(productsWithPrice);
-}, [clear, formChosenProducts, products])
+  }, [clear, formChosenProducts, products]);
 
   const formedProducts = productsList
     ? productsList.filter(({ idMeal }) => productsCart.includes(idMeal))
@@ -53,16 +51,12 @@ const ProductsList = () => {
 
   const handleAddProduct = (id) => {
     add(id);
-     console.log(id);
-    
+    console.log(id);
   };
 
-  const handleFormProducts = formedProducts => {
+  const handleFormProducts = (formedProducts) => {
     formChosenProducts(formedProducts);
-  }
-
-
-
+  };
 
   return (
     <SC.ProductsList>
@@ -94,7 +88,6 @@ const ProductsList = () => {
           />
         ))
       )}
-     
     </SC.ProductsList>
   );
 };
